@@ -8,13 +8,15 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-//        list.add("-5"); //1.5
-//        list.add("5"); //1.5
+        Map<String, Integer> map = new HashMap<>();
 
-        Stream.of("cat", "dog", "elephant", "fox", "rabbit", "duck")
-                .takeWhile(n -> n.length() % 2 != 0)
-                .forEach(System.out::println);
+        map.put("Pesho", 2);
+        map.put("Ivan", 3);
+        map.put("Georgi", 4);
+
+        map.entrySet().stream().forEach(entry -> System.out.println(entry.getKey() + entry.getValue()));
+        map.keySet().stream().forEach(System.out::println);
+        map.values().stream().forEach(System.out::println);
     }
     //Function<приема, връща>
     //UnaryOperator<приема и връща>
